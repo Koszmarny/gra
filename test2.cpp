@@ -77,7 +77,7 @@ int ktora_kolumna;     // aktualna pozycja dla kolumn
     int w=0;
     int znak;
     znak = 0;
-    while ((znak=getch())!=27||w==9)  // wykonuj dopoki nie nacisnieto ESC lub zebrano 5
+    while ((znak=getch())!=27)  // wykonuj dopoki nie nacisnieto ESC
     {
         switch (znak)
           {
@@ -116,34 +116,49 @@ int ktora_kolumna;     // aktualna pozycja dla kolumn
        if(ktora_kolumna==x1&&ktory_wiersz==y1)
        {
            w++;
-           idzxy(x1, y1);
+           x1=0;
+           y1=0;
+           //idzxy(x1, y1);
            cout<<" ";
        }
-       if(ktora_kolumna==x2&&ktory_wiersz==y2)
+      else if(ktora_kolumna==x2&&ktory_wiersz==y2)
        {
            w++;
-           idzxy(x2, y2);
+           x2=0;
+           y2=0;
+           //idzxy(x2, y2);
            cout<<" ";
        }
-       if(ktora_kolumna==x3&&ktory_wiersz==y3)
+       else if(ktora_kolumna==x3&&ktory_wiersz==y3)
        {
-           idzxy(x3, y3);
-           cout<<" ";
-           w++;
-       }
-       if(ktora_kolumna==x4&&ktory_wiersz==y4)
-       {
-           idzxy(x4, y4);
+           x3=0;
+           y3=0;
+           //idzxy(x3, y3);
            cout<<" ";
            w++;
        }
-       if(ktora_kolumna==x5&&ktory_wiersz==y5)
+       else if(ktora_kolumna==x4&&ktory_wiersz==y4)
        {
-           idzxy(x5, y5);
+           x4=0;
+           y4=0;
+           //idzxy(x4, y4);
+           cout<<" ";
+           w++;
+       }
+      else if(ktora_kolumna==x5&&ktory_wiersz==y5)
+       {
+           x5=0;
+           y5=0;
+           //idzxy(x5, y5);
            cout<<" ";
            w++;
        }
        //cout<<w;
+       if(w==5)
+       {
+            system("PAUSE");
+            return EXIT_SUCCESS;
+       }
 
     }
 
